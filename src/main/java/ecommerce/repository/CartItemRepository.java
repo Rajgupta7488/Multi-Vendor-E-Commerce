@@ -1,24 +1,28 @@
 package ecommerce.repository;
 
-import com.ecommerce.entity.CartItem;
-import com.ecommerce.entity.Product;
-import com.ecommerce.entity.User;
+import ecommerce.entity.CartItem;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 @Repository
 public interface CartItemRepository extends JpaRepository<CartItem, Long> {
-
-    List<CartItem> findByUser(User user);
-
-    Optional<CartItem> findByUserAndProduct(User user, Product product);
-
-    void deleteByUser(User user);
-
-    void deleteByUserAndProduct(User user, Product product);
-
-    long countByUser(User user);
+    Optional<CartItem> findByCartIdAndProductId(Long cartId, Long productId);
+    List<CartItem> findByCartId(Long cartId);
+    List<CartItem> findByProductId(Long productId);
+    
+    @Modifying
+    @Transactional
+    @Query("DELETE FROM CartItem ci WHERE ci.cart.id = :cartId AND ci.product.id = :productId")
+    void deleteByCartIdAndProductId(Long cartId, Long productId);
+    
+    @Modifying
+    @Transactional
+    @Query("DELETE FROM CartItem ci WHERE ci.cart.id = :cartId")
+    void deleteByCartId(Long cartId);
 }
