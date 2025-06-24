@@ -72,9 +72,7 @@ A robust, scalable multi-vendor e-commerce platform built with modern Java techn
    mvn spring-boot:run
    ```
 
-5. **Access the application**
-   - UI/API: [http://localhost:8080](http://localhost:8080)
-   - Swagger API Docs: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html) (if Swagger enabled)
+
 
 ---
 
@@ -256,7 +254,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- Spring Boot & JPA guides [[1]](https://medium.com/javaguides/best-practices-for-spring-data-jpa-the-ultimate-guide-c2a84a4cd45e)
+- Spring Boot & JPA guides 
 - Jakarta EE community
 - Contributors & open-source community
 
