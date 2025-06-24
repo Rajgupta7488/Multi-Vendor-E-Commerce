@@ -112,30 +112,6 @@ src/
 | PUT    | `/api/categories/{id}`                | Update category         |
 | DELETE | `/api/categories/{id}`                | Delete category         |
 
-#### Example Request
-
-```json
-POST /api/categories
-{
-  "name": "Electronics",
-  "description": "Electronic devices and gadgets",
-  "active": true
-}
-```
-
-#### Example Response
-
-```json
-{
-  "id": 1,
-  "name": "Electronics",
-  "description": "Electronic devices and gadgets",
-  "active": true,
-  "createdAt": "2025-06-24T10:00:00Z"
-}
-```
-
----
 
 ## 🏗 Architecture
 
@@ -173,9 +149,6 @@ Edit `application.properties` for your DB:
 spring.datasource.url=jdbc:mysql://localhost:3306/ecommerce_db
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
-# PostgreSQL
-# spring.datasource.url=jdbc:postgresql://localhost:5432/ecommerce_db
-# spring.datasource.driver-class-name=org.postgresql.Driver
 
 # H2 (in-memory for dev)
 # spring.datasource.url=jdbc:h2:mem:testdb
@@ -259,11 +232,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Contributors & open-source community
 
 ---
-
-## 📞 Support
-
-- Create an issue on GitHub
-- Documentation: [Wiki](https://github.com/Rajgupta7488/Multi-Vendor-E-Commerce/wiki)
 
 ---
 
